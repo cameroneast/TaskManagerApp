@@ -11,7 +11,7 @@ class Person {
         return UserID
     }
 
-    def setUserID(UserID: String) {
+    def setUserID(UserID: String): Unit = {
         this.UserID = UserID
     }
 
@@ -20,7 +20,7 @@ class Person {
         return Name
     }
 
-    def setName(Name: String) {
+    def setName(Name: String): String = {
         this.Name = Name
     }
 
@@ -29,15 +29,15 @@ class Person {
         return this.Tasks
     }
 
-    def addTask(Task: Task) {
+    def addTask(Task: Task): Task = {
         this.Tasks.add(Task)
     }
 
-    def removeTask(Task: Task) {
+    def removeTask(Task: Task): Task = {
         this.Tasks.remove(Task)
     }
 
-    def removeTask(TaskIndex: Int) {
+    def removeTask(TaskIndex: Int): Int = {
         this.Tasks.remove(TaskIndex)
     }
 
@@ -54,7 +54,7 @@ class Person {
         return this.Manager
     }
 
-    def setManager(Manager: Manager) {
+    def setManager(Manager: Manager): Manager = {
         this.Manager = Manager
     }
 }
