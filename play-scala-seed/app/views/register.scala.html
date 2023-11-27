@@ -1,0 +1,18 @@
+@(userForm: Form[RegisterForm.RegisterData], postUrl: Call)(implicit messages: Messages)
+
+
+
+    @main("Login") {
+
+
+        
+        @if(userForm.hasGlobalErrors) {
+            @userForm.globalErrors.map { (error: FormError) =>
+            <div>
+                @error.key: @error.message
+            </div>
+            }
+        }
+
+
+    }

@@ -1,60 +1,64 @@
-class Person {
+package models
+import scala.collection.mutable.ArrayBuffer
+
+class Person() {
+    
     // Class variables
-    var UserID: String = ""
-    var Name: String = ""
-    var Manager: Manager = null
+    var userID: String = ""
+    var name: String = ""
+    var manager: Manager = null
     // ArrayList of Task objects
-    var Tasks: ArrayList[Task] = new ArrayList[Task]()
+    var tasks: ArrayBuffer[Task] = new ArrayBuffer[Task]()
 
     // Getters and Setters
     def getUserID(): String = {
-        return UserID
+        return userID
     }
 
-    def setUserID(UserID: String): Unit = {
-        this.UserID = UserID
+    def setUserID(userID: String): Unit = {
+        this.userID = userID
     }
 
 
     def getName(): String = {
-        return Name
+        return name
     }
 
-    def setName(Name: String): String = {
-        this.Name = Name
+    def setName(name: String): Unit = {
+        this.name = name
     }
 
 
-    def getTasks(): ArrayList[Task] = {
-        return this.Tasks
+    def getTasks(): ArrayBuffer[Task] = {
+        return this.tasks
     }
 
-    def addTask(Task: Task): Task = {
-        this.Tasks.add(Task)
+    def addTask(task: Task): Unit = {
+        this.tasks.append(task)
     }
 
-    def removeTask(Task: Task): Task = {
-        this.Tasks.remove(Task)
+    def removeTask(task: Task): Unit = {
+        this.tasks -= task
     }
 
-    def removeTask(TaskIndex: Int): Int = {
-        this.Tasks.remove(TaskIndex)
+    def removeTask(taskIndex: Int): Unit = {
+        this.tasks -= this.tasks(taskIndex)
     }
 
-    def getTask(TaskIndex: Int): Task = {
-        return this.Tasks.get(TaskIndex)
+    def getTask(taskIndex: Int): Task = {
+        return this.tasks(taskIndex)
     }
 
-    def getTask(Task: Task): Task = {
-        return this.Tasks.get(this.Tasks.indexOf(Task))
+    def getTask(task: Task): Task = {
+        return this.tasks(this.tasks.indexOf(task))
     }
 
 
     def getManager(): Manager = {
-        return this.Manager
+        return this.manager
     }
 
-    def setManager(Manager: Manager): Manager = {
-        this.Manager = Manager
+    def setManager(manager: Manager): Unit = {
+        this.manager = manager
     }
 }

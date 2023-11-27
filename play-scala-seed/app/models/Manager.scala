@@ -1,30 +1,32 @@
 // Inherit Person class
+package models
+import scala.collection.mutable.ArrayBuffer
 class Manager extends Person{
     // Class variables
-    var Employees: ArrayList[Person] = new ArrayList[Person]()
+    var employees: ArrayBuffer[Person] = new ArrayBuffer[Person]()
 
     // Getters and Setters
-    def getEmployees(): ArrayList[Person] = {
-        return this.Employees
+    def getEmployees(): ArrayBuffer[Person] = {
+        return this.employees
     }
 
-    def addEmployee(Employee: Person): Person = {
-        this.Employees.add(Employee)
+    def addEmployee(employee: Person): Unit = {
+        this.employees.append(employee)
     }
 
-    def removeEmployee(Employee: Person): Person = {
-        this.Employees.remove(Employee)
+    def removeEmployee(employee: Person): Unit = {
+        this.employees -= employee
     }
 
-    def removeEmployee(EmployeeIndex: Int): Int = {
-        this.Employees.remove(EmployeeIndex)
+    def removeEmployee(employeeIndex: Int): Unit = {
+        this.employees.remove(employeeIndex)    
     }
 
-    def getEmployee(EmployeeIndex: Int): Person = {
-        return this.Employees.get(EmployeeIndex)
+    def getEmployee(employeeIndex: Int): Person = {
+        return this.employees(employeeIndex)
     }
 
-    def getEmployee(Employee: Person): Person = {
-        return this.Employees.get(this.Employees.indexOf(Employee))
+    def getEmployee(employee: Person): Person = {
+        return this.employees(this.employees.indexOf(employee))
     }
 }

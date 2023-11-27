@@ -1,3 +1,4 @@
+package models
 class Task {
     // Class variables
     var UserAssigned: Person = null
@@ -10,7 +11,7 @@ class Task {
         return UserAssigned
     }
 
-    def setUserAssigned(UserAssigned: Person): Person = {
+    def setUserAssigned(UserAssigned: Person): Unit = {
         this.UserAssigned = UserAssigned
     }
 
@@ -19,7 +20,7 @@ class Task {
         return Description
     }
 
-    def setDescription(Description: String): String = {
+    def setDescription(Description: String): Unit = {
         this.Description = Description
     }
 
@@ -28,7 +29,7 @@ class Task {
         return Priority
     }
 
-    def setPriority(Priority: Int): Int = {
+    def setPriority(Priority: Int): Unit = {
         this.Priority = Priority
     }
 
@@ -37,7 +38,7 @@ class Task {
         return isComplete
     }
 
-    def setisComplete(isComplete: Boolean): Boolean = {
+    def setisComplete(isComplete: Boolean): Unit = {
         this.isComplete = isComplete
     }
 }

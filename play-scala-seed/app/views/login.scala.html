@@ -1,3 +1,28 @@
-@(userForm: Form[UserData], postUrl: Call)(implicit messages: Messages)
+@(userForm: Form[LoginForm.LoginData], postUrl: Call)(implicit messages: Messages)
+
+    @main("Login") {
+
+      <h1 >
+        <a href="register.scala.html">
+            <button > Register </button>
+        </a>
+      </h1>
+        @if(userForm.hasGlobalErrors) {
+            @userForm.globalErrors.map { (error: FormError) =>
+              <div>
+                @error.key: @error.message
+              </div>
+            }
+        }
+
+
+        
+        
+
+
+
+
+
+    }
 
 
