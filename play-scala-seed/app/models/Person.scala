@@ -1,7 +1,19 @@
 package models
 import scala.collection.mutable.ArrayBuffer
 
+import play.api.mvc.QueryStringBindable
+import scala.collection.mutable.ArrayBuffer
+
 class Person() {
+
+    // Constructor
+    def this(userID: String, name: String, manager: Manager, tasks: ArrayBuffer[Task]) = {
+        this()
+        this.userID = userID
+        this.name = name
+        this.manager = manager
+        this.tasks = tasks
+    }
     
     // Class variables
     var userID: String = ""
