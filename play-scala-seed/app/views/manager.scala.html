@@ -1,0 +1,23 @@
+@(manager: Manager)
+@main("Manager Home") {
+        <h1>Manager Home</h1>
+        <!-- generate a list of all the people in the manager's ArrayBuffer of Person.scala objects and list by Person.name -->
+        <ul>
+            @for(person <- manager.employees) {
+            <li>@person.name</li>
+
+            <!-- list each person's tasks -->
+            <ul>
+                @for(task <- person.tasks) {
+                <li>@person.name</li>
+                <li>@task.Description</li>
+                <li>@task.Priority</li>
+                <li>@task.isComplete</li>
+            
+            <!-- button to delete a person from the manager's ArrayBuffer of Person.scala objects -->
+            <form action="/manager" method="POST">
+                <input type="hidden" name="person" value="@person.name">
+                <input type="submit" value="Delete">
+            }
+    }
+}
