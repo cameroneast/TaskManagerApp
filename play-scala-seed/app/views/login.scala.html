@@ -1,10 +1,10 @@
-@(userForm: Form[LoginForm.LoginData], postUrl: Call)(implicit messages: Messages)
+@(userForm: Form[LoginForm.LoginData], postUrl: Call)(implicit request: MessagesRequestHeader)
 
     @main("Login") {
 
       <h1 >
         <a href="@routes.AuthController.registerEmpty">
-            <button > Register </button>
+            <button > Click to Register </button>
         </a>
       </h1>
         @if(userForm.hasGlobalErrors) {

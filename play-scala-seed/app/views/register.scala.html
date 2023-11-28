@@ -1,10 +1,15 @@
-@(userForm: Form[RegisterForm.RegisterData], postUrl: Call)(implicit messages: Messages)
+@(userForm: Form[RegisterForm.RegisterData], postUrl: Call)(implicit request: MessagesRequestHeader)
 
 
 
     @main("Login") {
 
 
+        <h1 >
+            <a href="@routes.AuthController.loginEmpty">
+                <button > Cancel Registration</button>
+            </a>
+        </h1>
         
         @if(userForm.hasGlobalErrors) {
             @userForm.globalErrors.map { (error: FormError) =>
@@ -13,6 +18,18 @@
             </div>
             }
         }
+
+        @helper.form(postUrl) {
+            @helper.CSRF.formField
+      
+            @helper.inputText(userForm("name"))
+      
+            @helper.inputText(userForm("email"))
+
+            @helper.inputText(userForm("password"))
+      
+            <button>Register</button>
+          }
 
 
     }
