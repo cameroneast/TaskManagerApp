@@ -1,0 +1,16 @@
+@(person: Person)
+@main("Person Home") {
+  <h1>Person Home</h1>
+  <!-- generate a list from a particular Person.scala object's ArrayBuffer of Task.scala objects -->
+    <ul>
+        @for(task <- person.tasks) {
+        <li>@task.Description</li>
+        <li>@task.Priority</li>
+        <li>@task.isComplete/li>
+        <!-- button to mark task as complete, by setting its boolean member variable isComplete to true -->
+        <form action="/person" method="POST">
+            <input type="hidden" name="task" value="@task.isComplete">
+            <input type="submit" value=true>
+        }
+    </ul>
+}
