@@ -6,7 +6,7 @@ class Person() {
     // Class variables
     var userID: String = ""
     var name: String = ""
-    var manager: Manager = null
+    var manager: String = null
     // ArrayList of Task objects
     var tasks: ArrayBuffer[Task] = new ArrayBuffer[Task]()
 
@@ -54,11 +54,11 @@ class Person() {
     }
 
 
-    def getManager(): Manager = {
+    def getManager(): String = {
         return this.manager
     }
 
-    def setManager(manager: Manager): Unit = {
+    def setManager(manager: String): Unit = {
         this.manager = manager
     }
 }

@@ -1,17 +1,17 @@
 package models
 class Task {
     // Class variables
-    var UserAssigned: Person = null
+    var UserAssigned: String = null
     var Description: String = ""
     var Priority: Int = 0
     var isComplete: Boolean = false
 
     // Getters and Setters
-    def getUserAssigned(): Person = {
+    def getUserAssigned(): String = {
         return UserAssigned
     }
 
-    def setUserAssigned(UserAssigned: Person): Unit = {
+    def setUserAssigned(UserAssigned: String): Unit = {
         this.UserAssigned = UserAssigned
     }
 

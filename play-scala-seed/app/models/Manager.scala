@@ -4,10 +4,18 @@ import scala.collection.mutable.ArrayBuffer
 class Manager extends Person{
     // Class variables
     var employees: ArrayBuffer[Person] = new ArrayBuffer[Person]()
-
+    var people: ArrayBuffer[String] = new ArrayBuffer[String]()
     // Getters and Setters
     def getEmployees(): ArrayBuffer[Person] = {
         return this.employees
+    }
+
+    def setPeople(people: ArrayBuffer[String]): Unit = {
+        this.people = people
+    }
+
+    def getPeople(): ArrayBuffer[String] = {
+        return people
     }
 
     def addEmployee(employee: Person): Unit = {
