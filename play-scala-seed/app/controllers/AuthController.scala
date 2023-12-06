@@ -159,8 +159,8 @@ class AuthController@Inject()(cc: MessagesControllerComponents) extends Messages
 
                 }
                 */
-                Redirect(routes.AuthController.loginComplete())
-            }
+            Redirect(routes.AuthController.loginComplete())
+            
         }
 
         val formValidationResult = loginForm.bindFromRequest()

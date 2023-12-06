@@ -7,7 +7,7 @@ import scala.collection.mutable.ArrayBuffer
 class Person() {
 
     // Constructor
-    def this(userID: String, name: String, manager: Manager, tasks: ArrayBuffer[Task]) = {
+    def this(userID: String, name: String, manager: String, tasks: ArrayBuffer[Task]) = {
         this()
         this.userID = userID
         this.name = name
